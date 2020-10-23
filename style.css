@@ -53,7 +53,6 @@ input[type="button"]{
 }
 
 .todoList{
-    /* display: block; */
     list-style: none;
     padding: 10px;
 }
@@ -61,18 +60,6 @@ input[type="button"]{
 .todoList .todoLinks{
     padding: 20px;
     background-color: #FED62B;  
-    margin-bottom: 10px;
-    position: relative;
-}
-
-.todoList .todoLinks::after{
-    position: absolute;
-    content: 'X';
-    right: 7%;
-    top: 17%;
-    color: white;
-    background-color: black;
-    padding: 12px;
-    color: white;
+    margin-bottom: 10px; 
 }
 

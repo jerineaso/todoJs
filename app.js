@@ -25,9 +25,3 @@ function displayArray(item){
     todoList.innerHTML += "<li class = 'todoLinks'>"+item+"</li>"
 }
 
-//Remove the Element
-todoList.childNodes.forEach((item)=>{
-    item.addEventListener('click',() =>{
-        todoList.removeChild(item)
-    })
-})
