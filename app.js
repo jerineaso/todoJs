@@ -8,25 +8,24 @@ inputBtn.addEventListener('click',e=>{
     console.log('clicked');
     console.log(item.value)
     displayArray(item.value);
-    item.value = ''
+    item.value = "";
 })
 
 function displayArray(items){
     todoItems.push(items);
     console.log(todoItems)
-    let links = document.createElement('li'); 
-    links.classList.add('todoLinks');
-    
-    let value = document.createTextNode(items);
-    links.appendChild(value)
-    todoList.appendChild(links) 
-    var myNodelist = document.getElementsByTagName("li");
-    var i;
-    for (i = 0; i < myNodelist.length; i++) {
-    var span = document.createElement("SPAN");
-    var txt = document.createTextNode("\u00D7");
-    span.className = "close";
-    span.appendChild(txt);
-    myNodelist[i].appendChild(span);
-    }
+    todoItems.forEach((item,index) => {
+        todo = `<li class = 'todoLinks' id='${index}'>${item} <span onclick='deleteItem(${index})'>&times;</span> </li>`;
+    });
+    console.log(todo);
+    todoList.insertAdjacentHTML("beforeend",todo);
 }
+
+const deleteItem = (index) => {
+    var id = index.toString();
+    console.log(id);
+
+    var item = document.getElementById(id);
+    todoItems.splice(index,1);
+    item.remove();
+}; 
